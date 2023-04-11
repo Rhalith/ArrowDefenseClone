@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyCollector : MonoBehaviour
 {
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player")) other.gameObject.SetActive(false);
+    }
     // Start is called before the first frame update
     void Start()
     {
